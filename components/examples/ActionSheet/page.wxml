@@ -1,0 +1,7 @@
+<button bindtap="onTapButton">
+  <text>Tap me to open action sheet!</text>
+</button>
+
+<ActionSheet
+  id="actionSheet"
+/>

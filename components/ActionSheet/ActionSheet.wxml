@@ -1,0 +1,24 @@
+<!--components/ui/ActionSheet/ActionSheet.wxml-->
+<view
+  wx:if="{{open}}"
+  class="modal-wrapper row justify-center items-center"
+  bindtap="hideActionSheet"
+  data-value="cancel"
+  catchtouchmove="catchAll"
+>
+  <view class="modal-inner">
+    <view class="list-body f-14">
+      <block
+        wx:for="{{options}}"
+        wx:for-item="option"
+        wx:key="index"
+      >
+        <view
+          class="modal-item {{option.disabled ? 'disabled' : ''}}"
+          data-value="{{index}}"
+          catchtap="{{option.disabled ? 'catchAll' : 'hideActionSheet'}}"
+        >{{ option.label }}</view>
+      </block>
+    </view>
+  </view>
+</view>
